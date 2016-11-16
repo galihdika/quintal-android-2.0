@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_gradebook"
+            android:icon="@drawable/ic_menu_gradebook"
+            android:title="@string/nav_gradebook" />
+        <item
+            android:id="@+id/nav_attendance"
+            android:icon="@drawable/ic_menu_attendance"
+            android:title="@string/nav_attendance" />
+        <item
+            android:id="@+id/nav_timetable"
+            android:icon="@android:drawable/ic_menu_week"
+            android:title="@string/nav_timetable" />
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="@string/nav_calendar" />
+    </group>
+
+    <item android:title="Subjects"
+        android:id="@+id/menu2">
+        <menu>
+            <item
+                android:id="@+id/nav_subject1"
+                android:icon="@drawable/ic_menu_gradebook"
+                android:title="Subject1" />
+            <item
+                android:id="@+id/nav_subject2"
+                android:icon="@drawable/ic_menu_gradebook"
+                android:title="Subject2" />
+        </menu>
+    </item>
+
+</menu>
