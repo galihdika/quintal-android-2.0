@@ -23,6 +23,7 @@ import com.example.quintal_dev_3.quintal.fragment.AttendanceFragment;
 import com.example.quintal_dev_3.quintal.fragment.CalendarFragment;
 import com.example.quintal_dev_3.quintal.fragment.GradebookFragment;
 import com.example.quintal_dev_3.quintal.R;
+import com.example.quintal_dev_3.quintal.fragment.HomeFragment;
 import com.example.quintal_dev_3.quintal.fragment.TimetableFragment;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -48,6 +49,9 @@ public class HomeActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Quintal");
+
+        //Set HomeFragment as default fragment to show
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +85,8 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        } else if(getSupportFragmentManager().findFragmentByTag("HomeFragment") != null){
+
         } else {
             super.onBackPressed();
         }
@@ -138,11 +144,14 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_subject2) {
 
+        } else {
+            fragment = new HomeFragment();
+            title = "Quintal";
         }
 
         if(fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, fragment);
+            ft.add(R.id.content_home, fragment).addToBackStack("HomeFragment");
             ft.commit();
 
             getSupportActionBar().setTitle(title);

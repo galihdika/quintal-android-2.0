@@ -12,6 +12,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_fc22bfe78ffee4c5d8910597a7e531d0fb297dfc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_bcee47e27e5d36a21f4ee4097515912abd6ef47d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -30,6 +48,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_694dc85dc7355cc54a3b470230e95fec7c633c04/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -45,6 +72,15 @@
         revision="25.0.0"
         sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_976d71a26f33b2c557e8ab5f6b75b48f43ff84ee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_57ceeeb5d35bbcbfc4e95b83f047d0e8a50f6a8e/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -75,6 +111,33 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_3796aeed7d3f7b8671e5e7556ddf1faab4e3e371/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_cf21497b812f8a77593d9003365d55994365a285/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_ab216a88ffd6355222490fcf7208038ad0d07562/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
         jumboMode="true"
         optimize="true"
@@ -84,12 +147,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_f9f52ff263d4d3db0d4f9f07dbaf3c541a155dff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_50de63aa808820e2c65b117e2c059c8981b61a09/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_f04599356b5f3597bc6c84c6ddf127b5c1243355/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_e07dc7b10e0953341c9890a4f4741a1994d15834/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -108,6 +198,33 @@
         revision="25.0.0"
         sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_4a4fba6eed48a91f052b5146448f94c05958e481/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_1282be450462b0aba755b17570dcea9a4813d469/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_316025782c0d9e5d216d6169c3e0f0ebea83e3fe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_533e819bb0b5ee813cffa3f2f0921960bfb43d7d/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -147,6 +264,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2499cd707c3ea928277bdac097f767f99401d66c">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8117823c36a70994f542893d21dd291cf9dc378f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_fa2f979bc16678d0179d94274a6502215cadb665/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -165,12 +300,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.1_27313871cae9b28554a941d60fe459cdb667af15/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_4d24a7828f34f3e2ccf983021537cb80a836596e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_a71b6dac5f473c541edfe4591821ec9aaf72e695/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_f7cd5bb1086b7def2f7d8e7dd5fb9e03bcbc4e6c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -183,12 +345,66 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_a93d2ef48cb184dfea7f802c1145cba3c848ff20/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/Quintal/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_7460f2cfa075a87dfee9d9cb55f261a2457b505f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.1_91b8aed70b0d7dc53240eaea628cde7858701209/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_301b6b2ec49f68613890fa603a4e6f51e2678211/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0680642c90f2cad4fb811f7a2a08df11159adbac">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d7cc2850f5476604cca1b74b25f7143c803f56bb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_81cab6f834d2e1d96d095be223afde3e9aa0b193/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_fb99692dbe12b91320b2afc3fc541a8688ea229e/classes.dex" />
     </item>
     <item
         is-multidex="true"
