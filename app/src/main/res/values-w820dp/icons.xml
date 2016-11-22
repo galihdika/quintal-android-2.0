@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fa_icon_calendar">\uf073</string>
+    <string name="fa_icon_announcements">\uf0a1</string>
+    <string name="fa_icon_attendance">\uf1ae</string>
+    <string name="fa_icon_gradebook">\uf02d</string>
+    <string name="fa_icon_notifications">\uf0f3</string>
+    <string name="fa_icon_timetable">\uf0ce</string>
+    <string name="fa_icon_activities">\uf0c5</string>
+</resources>
