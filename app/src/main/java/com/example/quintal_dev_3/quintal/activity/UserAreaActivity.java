@@ -17,6 +17,9 @@ public class UserAreaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
 
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
         //button
         final Button bStudent = (Button) findViewById(R.id.bStudent);
         final Button bTeacher = (Button) findViewById(R.id.bTeacher);

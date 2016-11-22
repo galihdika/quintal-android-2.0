@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?android:colorControlHighlight">
+    <item android:state_pressed="true" >
+        <shape android:shape="rectangle"  >
+            <corners android:radius="7dp" />
+            <padding
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp"
+                android:bottom="1dp"/>
+            <solid android:color="#1E88E5"/>
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape android:shape="rectangle"  >
+            <corners android:radius="7dp" />
+            <padding
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp"
+                android:bottom="1dp"/>
+            <solid android:color="#1E88E5"/>
+        </shape>
+    </item>
+    <item >
+        <shape android:shape="rectangle"  >
+            <corners android:radius="7dp" />
+            <padding
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp"
+                android:bottom="1dp"/>
+            <solid android:color="#0066AB"/>
+        </shape>
+    </item>
+</ripple>
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android" >
-<item android:state_pressed="true" >
-    <shape android:shape="rectangle"  >
-        <corners android:radius="7dp" />
-        <padding
-            android:left="1dp"
-            android:right="1dp"
-            android:top="1dp"
-            android:bottom="1dp"/>
-        <solid android:color="#1E88E5"/>
-    </shape>
-</item>
-<item android:state_focused="true">
-    <shape android:shape="rectangle"  >
-        <corners android:radius="7dp" />
-        <padding
-            android:left="1dp"
-            android:right="1dp"
-            android:top="1dp"
-            android:bottom="1dp"/>
-        <solid android:color="#1E88E5"/>
-    </shape>
-</item>
-<item >
-    <shape android:shape="rectangle"  >
-        <corners android:radius="7dp" />
-        <padding
-            android:left="1dp"
-            android:right="1dp"
-            android:top="1dp"
-            android:bottom="1dp"/>
-        <solid android:color="#1565C0"/>
-    </shape>
-</item>
-</selector>

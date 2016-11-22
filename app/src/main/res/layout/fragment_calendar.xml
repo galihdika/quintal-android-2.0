@@ -1,13 +1,25 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.quintal_dev_3.quintal.fragment.CalendarFragment">
+    tools:context="com.example.quintal_dev_3.quintal.fragment.CalendarFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <CalendarView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Calendar Fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarView2"
+        android:focusedMonthDateColor="@color/colorAccent"
+        android:showWeekNumber="true"/>
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</LinearLayout>

@@ -142,11 +142,13 @@
     <orderEntry type="library" exported="" name="support-fragment-25.0.1" level="project" />
     <orderEntry type="library" exported="" name="firebase-common-9.8.0" level="project" />
     <orderEntry type="library" exported="" name="support-core-ui-25.0.1" level="project" />
+    <orderEntry type="library" exported="" name="httpclient-4.3.6" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-core-utils-25.0.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-core-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-25.0.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="exposed-instrumentation-api-publish-0.5" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.4" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="rules-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.annotation-api-1.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
@@ -162,5 +164,6 @@
     <orderEntry type="library" exported="" name="support-vector-drawable-25.0.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-25.0.1" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-25.0.1" level="project" />
+    <orderEntry type="library" exported="" name="android-async-http-1.4.9" level="project" />
   </component>
 </module>

@@ -1,9 +1,9 @@
 package com.example.quintal_dev_3.quintal.fragment;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,13 +29,12 @@ public class AttendanceFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private AttendanceFragment.OnFragmentInteractionListener mListener;
 
-
-    private OnFragmentInteractionListener mListener;
+    private FragmentTabHost mTabHost;
 
     public AttendanceFragment() {
         // Required empty public constructor
-
     }
 
     /**
@@ -44,7 +43,7 @@ public class AttendanceFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AttendanceFragment.
+     * @return A new instance of fragment TabsFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static AttendanceFragment newInstance(String param1, String param2) {
@@ -69,7 +68,17 @@ public class AttendanceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_attendance, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_attendance, container, false);
+
+        mTabHost = (FragmentTabHost)rootView.findViewById(android.R.id.tabhost);
+        mTabHost.setup(getActivity(), getChildFragmentManager(),android.R.id.tabcontent);
+
+        mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Overall"),
+                OverallAttendanceFragment.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator("Detail"),
+                DetailAttendanceFragment.class, null);
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -79,7 +88,7 @@ public class AttendanceFragment extends Fragment {
         }
     }
 
-    /*@Override
+   /* @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {

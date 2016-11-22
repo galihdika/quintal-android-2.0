@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
@@ -46,11 +44,14 @@ public class HomeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Quintal");
 
-        //Set HomeFragment as default fragment to show
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.content_home, new HomeFragment(), "HomeFragment");
+        fragmentTransaction.commit();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -86,7 +87,9 @@ public class HomeActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else if(getSupportFragmentManager().findFragmentByTag("HomeFragment") != null){
-
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.content_home, new HomeFragment());
+            fragmentTransaction.commit();
         } else {
             super.onBackPressed();
         }
@@ -150,18 +153,18 @@ public class HomeActivity extends AppCompatActivity
         }
 
         if(fragment != null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(R.id.content_home, fragment).addToBackStack("HomeFragment");
-            ft.commit();
-
             getSupportActionBar().setTitle(title);
+
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_home, fragment);//.addToBackStack(null);
+            ft.commit();
         }
 
         Log.d(TAG, "fragment oke");
 
 
         //Highlight the selected menu
-        //item.setChecked(true);
+        item.setChecked(true);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
