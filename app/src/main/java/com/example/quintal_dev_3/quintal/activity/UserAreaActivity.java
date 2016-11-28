@@ -17,29 +17,11 @@ public class UserAreaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
 
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-
         //button
         final Button bStudent = (Button) findViewById(R.id.bStudent);
         final Button bTeacher = (Button) findViewById(R.id.bTeacher);
 
-        // Find the toolbar view inside the activity layout
-        //toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //Sets the Toolbar to act as the Action Bar for this Activity Window
-        //setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayShowHomeEnabled(false);
-        //getSupportActionBar().setLogo(R.mipmap.ic_launcher);
-        //getSupportActionBar().setDisplayUseLogoEnabled(true);
     }
-
-    //Menu icon are inflated just as they were with actionbar
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //Inflate the menu
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }*/
 
     public void onButtonStudentClicked(View view) {
         Intent intent = new Intent(this, HomeActivity.class);

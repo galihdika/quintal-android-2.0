@@ -44,7 +44,7 @@ public class ProfileModel implements Serializable {
     private String postCode;
 
     @SerializedName("institution")
-    private Institution institution;
+    private InstitutionModel institutionModel;
 
     @SerializedName("profile_photo")
     private File profilePhoto;
@@ -73,7 +73,7 @@ public class ProfileModel implements Serializable {
     @SerializedName("modified_date")
     private Timestamp modifiedDate;
 
-    public ProfileModel(int id, UserModel user, String middleName, String gender, String mobileNo, String otherNo, String address, String city, String country, String postCode, Institution institution, File profilePhoto, String preferredLang, Timestamp birthDate, String nis, String nisn, UserModel createdBy, Timestamp createdDate, UserModel modifiedBy, Timestamp modifiedDate) {
+    public ProfileModel(int id, UserModel user, String middleName, String gender, String mobileNo, String otherNo, String address, String city, String country, String postCode, InstitutionModel institutionModel, File profilePhoto, String preferredLang, Timestamp birthDate, String nis, String nisn, UserModel createdBy, Timestamp createdDate, UserModel modifiedBy, Timestamp modifiedDate) {
         this.id = id;
         this.user = user;
         this.middleName = middleName;
@@ -84,7 +84,7 @@ public class ProfileModel implements Serializable {
         this.city = city;
         this.country = country;
         this.postCode = postCode;
-        this.institution = institution;
+        this.institutionModel = institutionModel;
         this.profilePhoto = profilePhoto;
         this.preferredLang = preferredLang;
         this.birthDate = birthDate;
@@ -176,13 +176,9 @@ public class ProfileModel implements Serializable {
         this.postCode = postCode;
     }
 
-    public Institution getInstitution() {
-        return institution;
-    }
+    public InstitutionModel getInstitution() { return institutionModel; }
 
-    public void setInstitution(Institution institution) {
-        this.institution = institution;
-    }
+    public void setInstitution(InstitutionModel institution) { this.institutionModel = institutionModel; }
 
     public File getProfilePhoto() {
         return profilePhoto;

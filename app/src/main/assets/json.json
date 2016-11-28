@@ -1,0 +1,17 @@
+{
+    "login":[
+        {
+            "nama" : "Pratama",
+            "email" : "admin@pratamawijaya.com"
+        },
+        {
+            "nama" : "emrs",
+            "email" : "emrs@pratamawijaya.com"
+        },
+        {
+            "nama" : "jay",
+            "email" : "jay@pratamawijaya.com"
+        }
+    ]
+}
+
