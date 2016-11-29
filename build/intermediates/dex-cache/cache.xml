@@ -12,6 +12,195 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_bcee47e27e5d36a21f4ee4097515912abd6ef47d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4438b1a7848a7c571122ba618aa1304514aabee6">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.8.0_31ef4737f838f4d8e6f6334119fa9a933c7643a5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.1.3/f6c3aed1cdfa21b5c1737c915186ea93a95a58bd/jackson-core-2.1.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-core-2.1.3_ea1172cda2db00585f8c4a21138f06c211e1b593/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_694dc85dc7355cc54a3b470230e95fec7c633c04/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_57ceeeb5d35bbcbfc4e95b83f047d0e8a50f6a8e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.22.0/1d63f369ac78e4838a3197147012026e791008cb/google-oauth-client-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1d63f369ac78e4838a3197147012026e791008cb">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-oauth-client-1.22.0_4864a1bba6a109785e2f24594f80830653005c29/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.22.0/cc014d64ae11117e159d334c99d9c246d9b36f44/google-http-client-jackson2-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cc014d64ae11117e159d334c99d9c246d9b36f44">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-http-client-jackson2-1.22.0_3d94f0791f136a01bd0ec0142a4b019af780fd60/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-android/1.22.0/6d1e1a76a16a244ab2f41775791be1dd0ec2878a/google-http-client-android-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6d1e1a76a16a244ab2f41775791be1dd0ec2878a">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-http-client-android-1.22.0_d93d48d33b88ef2f45a4ea5689d625e7de195047/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.8.0_2a0b914c6f5445e6e078b1e49379997239e86a95/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_3796aeed7d3f7b8671e5e7556ddf1faab4e3e371/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_cf21497b812f8a77593d9003365d55994365a285/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_ab216a88ffd6355222490fcf7208038ad0d07562/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.1_0e52b69d404fa95b818fd8397bf1932ada710887/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_50de63aa808820e2c65b117e2c059c8981b61a09/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.22.0/244350c0c845c583717ade13f5666a452fd0cfa/google-api-client-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0244350c0c845c583717ade13f5666a452fd0cfa">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-api-client-1.22.0_27e1a9e540d871846495663fc11aee9ba5d0b76e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev52-1.22.0/490f57ed7c8f97d86e1ef70ee367d8f7c74a540a/google-api-services-drive-v3-rev52-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="490f57ed7c8f97d86e1ef70ee367d8f7c74a540a">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-api-services-drive-v3-rev52-1.22.0_5a0fcb9dab31abaec787cbb07c0a164b35dbaefe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_e07dc7b10e0953341c9890a4f4741a1994d15834/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.22.0/d441fc58329c4a4c067acec04ac361627f66ecc8/google-http-client-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d441fc58329c4a4c067acec04ac361627f66ecc8">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-http-client-1.22.0_ed864b415adefbe91b7658a908ee887edf80a13f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client-android/1.22.0/7a0fe12b7d8189a821934d6f9d6586d00180e461/google-api-client-android-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7a0fe12b7d8189a821934d6f9d6586d00180e461">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-api-client-android-1.22.0_a8c242e5a397f2364c2c1d32deaefb9f825574c9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_8d5e5064648c56272262771fe7315eb16ad6d26c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_0647c02061d372cf42b509dd3b4ff451a97205b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -39,21 +228,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/pub.devrel/easypermissions/0.1.5/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_bcee47e27e5d36a21f4ee4097515912abd6ef47d/classes.dex" />
+        sha1="2ffd97c466e0021572f3c7333839c71ecdf393ed">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/pub.devrel-easypermissions-0.1.5_1bde72f63c6c530b887af50d3b51b22f7e326406/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_694dc85dc7355cc54a3b470230e95fec7c633c04/classes.dex" />
+        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.8.0_98cded760db0f87fe54be6aa7b091c02ca31bf7b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -61,7 +250,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="6a405b158b56f7f5b71264fe60b4b3f405d60254">
+        sha1="84f21d0a80ca228e00d0a62130f7e3b5ae8ad7ec">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8117823c36a70994f542893d21dd291cf9dc378f/classes.dex" />
     </item>
     <item
@@ -75,12 +264,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
+        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_57ceeeb5d35bbcbfc4e95b83f047d0e8a50f6a8e/classes.dex" />
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_10d19cdcbdc5e5d301291ca7d959b968b380feeb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_171703f66dc3e5f8cb8ff1c55098ca89e1b53059/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -102,15 +300,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_3796aeed7d3f7b8671e5e7556ddf1faab4e3e371/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -120,12 +309,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-jdk5/17.0/463f8378feba44df7ba7cd9272d01837dad62b36/guava-jdk5-17.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_cf21497b812f8a77593d9003365d55994365a285/classes.dex" />
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/guava-jdk5-17.0_aa38b5c977a035f0b616da7fda0370b8c8681a47/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -147,39 +336,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_ab216a88ffd6355222490fcf7208038ad0d07562/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/quintal-dev-3/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.1_0e52b69d404fa95b818fd8397bf1932ada710887/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_f9f52ff263d4d3db0d4f9f07dbaf3c541a155dff/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_50de63aa808820e2c65b117e2c059c8981b61a09/classes.dex" />
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsr305-1.3.9_f1841e75b1a30e3f9f6425cdbe1b68ce0aaadd56/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -192,21 +354,21 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_819e78032853a72bc18de7cc2bf8f0a67d4f5715/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="0ae2b2be9b6658ff701c658890caa0b3501788b8">
+        sha1="d701c4cd5a91671f4a2978732adebe766b70442e">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d7cc2850f5476604cca1b74b25f7143c803f56bb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_e07dc7b10e0953341c9890a4f4741a1994d15834/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -216,6 +378,15 @@
         revision="25.0.0"
         sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_81cab6f834d2e1d96d095be223afde3e9aa0b193/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/quintal-dev-3/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.4_5f712283dd54c80b0feaa4ab5d5cfbed58409237/classes.dex" />
     </item>
     <item
         is-multidex="true"

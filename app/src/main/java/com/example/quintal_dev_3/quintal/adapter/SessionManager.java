@@ -4,15 +4,15 @@ package com.example.quintal_dev_3.quintal.adapter;
  * Created by quintal-dev-3 on 28/11/16.
  */
 
-import java.util.HashMap;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-import com.example.quintal_dev_3.quintal.activity.LoginActivity;
+import com.example.quintal_dev_3.quintal.LoginActivity;
+
+import java.util.HashMap;
 
 @SuppressLint("CommitPrefEdits")
 public class SessionManager {

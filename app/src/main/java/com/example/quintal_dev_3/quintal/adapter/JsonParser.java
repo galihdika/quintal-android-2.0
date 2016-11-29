@@ -2,9 +2,6 @@ package com.example.quintal_dev_3.quintal.adapter;
 
 import android.util.Log;
 
-import com.example.quintal_dev_3.quintal.model.ProfileModel;
-import com.google.api.client.http.HttpResponse;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 

@@ -10,7 +10,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/calendarView2"
         android:focusedMonthDateColor="@color/colorAccent"
-        android:showWeekNumber="true"/>
+        android:showWeekNumber="true"
+        android:maxDate="07/31/2017"
+        android:minDate="08/01/2016"/>
 
     <ScrollView
         android:layout_width="match_parent"
