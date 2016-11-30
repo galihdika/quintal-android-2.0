@@ -15,6 +15,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.example.quintal_dev_3.quintal.Utility.LoginService;
+import com.example.quintal_dev_3.quintal.Utility.ServiceGenerator;
+import com.example.quintal_dev_3.quintal.model.User;
+import com.example.quintal_dev_3.quintal.model.UserModel;
 import com.example.quintal_dev_3.quintal.parent.HomeParentActivty;
 import com.example.quintal_dev_3.quintal.student.activity.HomeActivity;
 import com.example.quintal_dev_3.quintal.adapter.SessionManager;
@@ -34,7 +38,14 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class LoginActivity extends ProgressDialogActivity {
+
     private static final String TAG = LoginActivity.class.getName();
 
     SessionManager session;
@@ -42,12 +53,13 @@ public class LoginActivity extends ProgressDialogActivity {
     private EditText emailText;
     private EditText passwordText;
     private Button loginButton;
+    private Button resetButton;
 
     boolean isStudent;
     boolean isParent;
     boolean isTeacher;
 
-    private String url = "quintal.id";
+    private String url = "http://192.168.0.116:8000/en/api/login/";
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -84,6 +96,7 @@ public class LoginActivity extends ProgressDialogActivity {
         emailText = (EditText) findViewById(R.id.etEmail);
         passwordText = (EditText) findViewById(R.id.etPassword);
         loginButton = (Button) findViewById(R.id.bLogin);
+        resetButton = (Button) findViewById(R.id.bReset_password_login);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
 
@@ -98,22 +111,61 @@ public class LoginActivity extends ProgressDialogActivity {
                     return;
                 }
 
-                Log.e(TAG, "button clicked");
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                showProgressDialog("Authenticating...");
 
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (!task.isSuccessful()) {
-                                    Log.e(TAG, "login failed");
-                                    Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_LONG).show();
-                                } else {
-                                    Log.e(TAG, "login succes");
-                                    new GetProfile().execute();
-                                    onLoginSuccess();
-                                }
-                            }
-                        });
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://192/168/0/116:8000/en/api/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+
+                LoginService service = retrofit.create(LoginService.class);
+
+                User user = new User(email, password);
+
+                Call<UserModel> userModelCall = service.login(user);
+
+                userModelCall.enqueue(new Callback<UserModel>() {
+                    @Override
+                    public void onResponse(Call<UserModel> call, Response<UserModel> response) {
+                        int statusCode = response.code();
+                        UserModel userModel = response.body();
+                        Log.d(TAG, "onResponse: " + statusCode);
+                        hideProgressDialog();
+                    }
+
+                    @Override
+                    public void onFailure(Call<UserModel> call, Throwable t) {
+                        Log.d(TAG, "onFailure: " + t.getMessage());
+                        hideProgressDialog();
+                        Toast.makeText(LoginActivity.this, "wrong email or password", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+//                Log.e(TAG, "button clicked");
+//                mAuth.signInWithEmailAndPassword(email, password)
+//                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+//
+//                            @Override
+//                            public void onComplete(@NonNull Task<AuthResult> task) {
+//                                if (!task.isSuccessful()) {
+//                                    Log.e(TAG, "login failed");
+//                                    Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_LONG).show();
+//                                } else {
+//                                    Log.e(TAG, "login succes");
+//                                    new GetProfile().execute();
+//                                    onLoginSuccess();
+//                                }
+//                            }
+//                        });
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -139,120 +191,90 @@ public class LoginActivity extends ProgressDialogActivity {
         hideProgressDialog();
     }
 
-    private class GetProfile extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            showProgressDialog();
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-
-            //Getting Json from file
-            StringBuffer sb = new StringBuffer();
-            BufferedReader br = null;
-            try {
-                br = new BufferedReader(new InputStreamReader(getAssets().open(
-                        "json.json")));
-                String temp;
-                while ((temp = br.readLine()) != null)
-                    sb.append(temp);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    br.close(); // stop reading
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            String jsonString = sb.toString();
-            JSONObject json = null;
-            try {
-                json = new JSONObject(jsonString);
-                Log.e(TAG, "get Json object");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            //Getting Json from url api
-            //JsonParser jsonParser = new JsonParser();
-            //JSONObject json = jsonParser.getJSONFromUrl(url);
-
-            Log.e(TAG, "Response from URL" + json);
-            if (json != null) {
-                try {
-                    Log.e(TAG, "Getting json");
-                    JSONArray loginStorage = json.getJSONArray("login");
-                    for (int i = 0; i < loginStorage.length(); i++) {
-                        JSONObject in = loginStorage.getJSONObject(i);
-                        String name = in.getString("nama");
-                        String email = in.getString("email");
-                        session.createLoginSession(name, email);
-                    }
-                } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    });
-                }
-            } else {
-                Log.e(TAG, "Couldn't get json from server.");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Check LogCat for possible errors!",
-                                Toast.LENGTH_LONG).show();
-                        finish();
-                    }
-                });
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void v) {
-            super.onPostExecute(v);
-//            login();
-            hideProgressDialog();
-
-        }
-    }
-
-//    public void login() {
-//        Log.d(TAG, "Login");
+//    private class GetProfile extends AsyncTask<Void, Void, Void> {
 //
-//        loginButton.setEnabled(false);
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//            showProgressDialog("Authenthicating...");
+//        }
 //
-//        final String email = emailText.getText().toString();
-//        final String password = passwordText.getText().toString();
+//        @Override
+//        protected Void doInBackground(Void... arg0) {
 //
-//        // TODO: Implement your own authentication logic here.
+//            //Getting Json from file
+//            StringBuffer sb = new StringBuffer();
+//            BufferedReader br = null;
+//            try {
+//                br = new BufferedReader(new InputStreamReader(getAssets().open(
+//                        "json.json")));
+//                String temp;
+//                while ((temp = br.readLine()) != null)
+//                    sb.append(temp);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } finally {
+//                try {
+//                    br.close(); // stop reading
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            String jsonString = sb.toString();
+//            JSONObject json = null;
+//            try {
+//                json = new JSONObject(jsonString);
+//                Log.e(TAG, "get Json object");
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
 //
+//            //Getting Json from url api
+//            //JsonParser jsonParser = new JsonParser();
+//            //JSONObject json = jsonParser.getJSONFromUrl(url);
 //
-//        //ProfileModel Teacher = new ProfileModel();
-//        //Possibility of role from json
-//
-//        new Handler().post(
-//                new Runnable() {
-//                    public void run() {
-//
-//                        // On complete call either onLoginSuccess or onLoginFailed
-//                        if (email.contentEquals("example@quintal.id") && password.contentEquals("quintal123")) {
-//                            onLoginSuccess();
-//                        } else {
-//                            onLoginFailed();
+//            Log.e(TAG, "Response from URL" + json);
+//            if (json != null) {
+//                try {
+//                    Log.e(TAG, "Getting json");
+//                    JSONArray loginStorage = json.getJSONArray("login");
+//                    for (int i = 0; i < loginStorage.length(); i++) {
+//                        JSONObject in = loginStorage.getJSONObject(i);
+//                        String name = in.getString("nama");
+//                        String email = in.getString("email");
+//                        session.createLoginSession(name, email);
+//                    }
+//                } catch (final JSONException e) {
+//                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(getApplicationContext(),
+//                                    "Json parsing error: " + e.getMessage(),
+//                                    Toast.LENGTH_LONG).show();
 //                        }
+//                    });
+//                }
+//            } else {
+//                Log.e(TAG, "Couldn't get json from server.");
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Toast.makeText(getApplicationContext(),
+//                                "Couldn't get json from server. Check LogCat for possible errors!",
+//                                Toast.LENGTH_LONG).show();
+//                        finish();
 //                    }
 //                });
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void v) {
+//            super.onPostExecute(v);
+//            hideProgressDialog();
+//        }
 //    }
 
     @Override
@@ -269,7 +291,7 @@ public class LoginActivity extends ProgressDialogActivity {
         } else if (isTeacher) {
             onLoginSuccessToTeacher();
         }
-        //for testing
+        //for testing only
         Intent intent = new Intent(this, UserAreaActivity.class);
         startActivity(intent);
         finish();

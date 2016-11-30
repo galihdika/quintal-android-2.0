@@ -13,10 +13,10 @@ public class ProgressDialogActivity extends AppCompatActivity {
     @VisibleForTesting
     public ProgressDialog mProgressDialog;
 
-    public void showProgressDialog() {
+    public void showProgressDialog(String text) {
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this, R.style.AppTheme_Dark_Dialog);
-            mProgressDialog.setMessage(getString(R.string.loading));
+            mProgressDialog.setMessage(text);
             mProgressDialog.setIndeterminate(true);
         }
         mProgressDialog.show();

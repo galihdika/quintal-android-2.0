@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.quintal_dev_3.quintal.LoginActivity;
 import com.example.quintal_dev_3.quintal.R;
 import com.example.quintal_dev_3.quintal.student.fragment.AttendanceFragment;
 import com.example.quintal_dev_3.quintal.student.fragment.CalendarFragment;
@@ -24,6 +25,7 @@ import com.example.quintal_dev_3.quintal.student.fragment.GradebookFragment;
 import com.example.quintal_dev_3.quintal.student.fragment.HomeFragment;
 import com.example.quintal_dev_3.quintal.student.fragment.TimetableFragment;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -99,6 +101,12 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        } else if (id == R.id.action_logout) {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
             return true;
         }
 
