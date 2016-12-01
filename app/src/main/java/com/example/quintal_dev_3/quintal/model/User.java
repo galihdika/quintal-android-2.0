@@ -8,8 +8,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class User {
 
-    @SerializedName("email")
-    String email;
+    @SerializedName("username")
+    String username;
 
     @SerializedName("password")
     String password;
@@ -18,7 +18,7 @@ public class User {
     String role;
 
     public User(String email, String password) {
-        this.email = email;
+        this.username = email;
         this.password = password;
     }
 }

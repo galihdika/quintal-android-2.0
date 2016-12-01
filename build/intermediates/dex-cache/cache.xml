@@ -331,7 +331,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="ca6676c94ebdb5e40d7602f0255f7c8d6f6534e4">
+        sha1="1ff982ab9cc30fc890b8060681c220d0188a8103">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8117823c36a70994f542893d21dd291cf9dc378f/classes.dex" />
     </item>
     <item
@@ -412,7 +412,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="9c4260d886affa1033cce1f86cc1336fd3b44e7d">
+        sha1="a39b51c4262a54eb37913c36568df66198c1c3ee">
         <dex dex="/home/quintal-dev-3/AndroidStudioProjects/quintal-android-2.0/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d7cc2850f5476604cca1b74b25f7143c803f56bb/classes.dex" />
     </item>
     <item

@@ -1,10 +1,7 @@
 package com.example.quintal_dev_3.quintal;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import android.content.Intent;
@@ -16,27 +13,15 @@ import android.widget.Toast;
 
 
 import com.example.quintal_dev_3.quintal.Utility.LoginService;
-import com.example.quintal_dev_3.quintal.Utility.ServiceGenerator;
+import com.example.quintal_dev_3.quintal.model.ProfileModel;
 import com.example.quintal_dev_3.quintal.model.User;
-import com.example.quintal_dev_3.quintal.model.UserModel;
 import com.example.quintal_dev_3.quintal.parent.HomeParentActivty;
 import com.example.quintal_dev_3.quintal.student.activity.HomeActivity;
 import com.example.quintal_dev_3.quintal.adapter.SessionManager;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -59,7 +44,7 @@ public class LoginActivity extends ProgressDialogActivity {
     boolean isParent;
     boolean isTeacher;
 
-    private String url = "http://192.168.0.116:8000/en/api/login/";
+    private String url = "http://192.168.0.119:8000/en/api/login/";
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -103,7 +88,7 @@ public class LoginActivity extends ProgressDialogActivity {
             @Override
             public void onClick(View v) {
 
-                String email = emailText.getText().toString();
+                String username = emailText.getText().toString();
                 final String password = passwordText.getText().toString();
 
                 if (!validate()) {
@@ -113,28 +98,38 @@ public class LoginActivity extends ProgressDialogActivity {
 
                 showProgressDialog("Authenticating...");
 
+                Gson gson = new GsonBuilder()
+                        .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+                        .create();
+
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192/168/0/116:8000/en/api/")
-                        .addConverterFactory(GsonConverterFactory.create())
+                        .baseUrl("http://192.168.0.119:8000/en/")
+                        .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
+
 
                 LoginService service = retrofit.create(LoginService.class);
 
-                User user = new User(email, password);
+                User user = new User(username, password);
 
-                Call<UserModel> userModelCall = service.login(user);
+                Call<ProfileModel> profileModelCall = service.login(user);
 
-                userModelCall.enqueue(new Callback<UserModel>() {
+                profileModelCall.enqueue(new Callback<ProfileModel>() {
                     @Override
-                    public void onResponse(Call<UserModel> call, Response<UserModel> response) {
+                    public void onResponse(Call<ProfileModel> call, Response<ProfileModel> response) {
                         int statusCode = response.code();
-                        UserModel userModel = response.body();
+                        ProfileModel profileModel = response.body();
                         Log.d(TAG, "onResponse: " + statusCode);
+                        if (response.isSuccessful()) {
+                            onLoginSuccess();
+                        } else {
+                            Log.e(TAG, "error body: ");
+                        }
                         hideProgressDialog();
                     }
 
                     @Override
-                    public void onFailure(Call<UserModel> call, Throwable t) {
+                    public void onFailure(Call<ProfileModel> call, Throwable t) {
                         Log.d(TAG, "onFailure: " + t.getMessage());
                         hideProgressDialog();
                         Toast.makeText(LoginActivity.this, "wrong email or password", Toast.LENGTH_LONG).show();
@@ -324,13 +319,13 @@ public class LoginActivity extends ProgressDialogActivity {
     public boolean validate() {
         boolean valid = true;
 
-        String email = emailText.getText().toString();
+        String username = emailText.getText().toString();
         String password = passwordText.getText().toString();
 
-        if (email.isEmpty()) {
+        if (username.isEmpty()) {
             emailText.setError("email is required");
             valid = false;
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
             emailText.setError("enter a valid email address");
             valid = false;
         } else {

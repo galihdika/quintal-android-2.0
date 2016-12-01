@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.File;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Set;
 
 /**
  * Created by Danny Saksono on 7/04/2016.
@@ -44,7 +45,7 @@ public class ProfileModel implements Serializable {
     private String postCode;
 
     @SerializedName("institution")
-    private InstitutionModel institutionModel;
+    private InstitutionModel institution;
 
     @SerializedName("profile_photo")
     private File profilePhoto;
@@ -73,7 +74,10 @@ public class ProfileModel implements Serializable {
     @SerializedName("modified_date")
     private Timestamp modifiedDate;
 
-    public ProfileModel(int id, UserModel user, String middleName, String gender, String mobileNo, String otherNo, String address, String city, String country, String postCode, InstitutionModel institutionModel, File profilePhoto, String preferredLang, Timestamp birthDate, String nis, String nisn, UserModel createdBy, Timestamp createdDate, UserModel modifiedBy, Timestamp modifiedDate) {
+    @SerializedName("user_role_set")
+    private Set<UserRoleModel> userRoleSet;
+
+    public ProfileModel(int id, UserModel user, String middleName, String gender, String mobileNo, String otherNo, String address, String city, String country, String postCode, InstitutionModel institution, File profilePhoto, String preferredLang, Timestamp birthDate, String nis, String nisn, UserModel createdBy, Timestamp createdDate, UserModel modifiedBy, Timestamp modifiedDate, Set<UserRoleModel> userRoleSet) {
         this.id = id;
         this.user = user;
         this.middleName = middleName;
@@ -84,7 +88,7 @@ public class ProfileModel implements Serializable {
         this.city = city;
         this.country = country;
         this.postCode = postCode;
-        this.institutionModel = institutionModel;
+        this.institution = institution;
         this.profilePhoto = profilePhoto;
         this.preferredLang = preferredLang;
         this.birthDate = birthDate;
@@ -94,6 +98,7 @@ public class ProfileModel implements Serializable {
         this.createdDate = createdDate;
         this.modifiedBy = modifiedBy;
         this.modifiedDate = modifiedDate;
+        this.userRoleSet = userRoleSet;
     }
 
     public int getId() {
@@ -176,9 +181,9 @@ public class ProfileModel implements Serializable {
         this.postCode = postCode;
     }
 
-    public InstitutionModel getInstitution() { return institutionModel; }
+    public InstitutionModel getInstitution() { return institution; }
 
-    public void setInstitution(InstitutionModel institution) { this.institutionModel = institutionModel; }
+    public void setInstitution(InstitutionModel institution) { this.institution = institution; }
 
     public File getProfilePhoto() {
         return profilePhoto;
@@ -251,4 +256,13 @@ public class ProfileModel implements Serializable {
     public void setModifiedDate(Timestamp modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
+
+    public Set<UserRoleModel> getUserRoleSet() {
+        return userRoleSet;
+    }
+
+    public void setUserRoleSet(Set<UserRoleModel> userRoleSet) {
+        this.userRoleSet = userRoleSet;
+    }
+
 }
