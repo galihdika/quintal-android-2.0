@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.File;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Set;
 
 /**
@@ -75,9 +76,9 @@ public class ProfileModel implements Serializable {
     private Timestamp modifiedDate;
 
     @SerializedName("user_role_set")
-    private Set<UserRoleModel> userRoleSet;
+    private ArrayList<UserRoleModel> userRoleSet;
 
-    public ProfileModel(int id, UserModel user, String middleName, String gender, String mobileNo, String otherNo, String address, String city, String country, String postCode, InstitutionModel institution, File profilePhoto, String preferredLang, Timestamp birthDate, String nis, String nisn, UserModel createdBy, Timestamp createdDate, UserModel modifiedBy, Timestamp modifiedDate, Set<UserRoleModel> userRoleSet) {
+    public ProfileModel(int id, UserModel user, String middleName, String gender, String mobileNo, String otherNo, String address, String city, String country, String postCode, InstitutionModel institution, File profilePhoto, String preferredLang, Timestamp birthDate, String nis, String nisn, UserModel createdBy, Timestamp createdDate, UserModel modifiedBy, Timestamp modifiedDate, ArrayList<UserRoleModel> userRoleSet) {
         this.id = id;
         this.user = user;
         this.middleName = middleName;
@@ -257,11 +258,11 @@ public class ProfileModel implements Serializable {
         this.modifiedDate = modifiedDate;
     }
 
-    public Set<UserRoleModel> getUserRoleSet() {
+    public ArrayList<UserRoleModel> getUserRoleSet() {
         return userRoleSet;
     }
 
-    public void setUserRoleSet(Set<UserRoleModel> userRoleSet) {
+    public void setUserRoleSet(ArrayList<UserRoleModel> userRoleSet) {
         this.userRoleSet = userRoleSet;
     }
 

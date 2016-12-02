@@ -14,9 +14,6 @@ public class User {
     @SerializedName("password")
     String password;
 
-    @SerializedName("role")
-    String role;
-
     public User(String email, String password) {
         this.username = email;
         this.password = password;

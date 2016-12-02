@@ -12,9 +12,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.example.quintal_dev_3.quintal.Utility.GlobalVariables;
 import com.example.quintal_dev_3.quintal.Utility.LoginService;
 import com.example.quintal_dev_3.quintal.model.ProfileModel;
+import com.example.quintal_dev_3.quintal.model.RoleModel;
 import com.example.quintal_dev_3.quintal.model.User;
+import com.example.quintal_dev_3.quintal.model.UserModel;
+import com.example.quintal_dev_3.quintal.model.UserRoleModel;
 import com.example.quintal_dev_3.quintal.parent.HomeParentActivty;
 import com.example.quintal_dev_3.quintal.student.activity.HomeActivity;
 import com.example.quintal_dev_3.quintal.adapter.SessionManager;
@@ -22,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,40 +45,37 @@ public class LoginActivity extends ProgressDialogActivity {
     private Button loginButton;
     private Button resetButton;
 
-    boolean isStudent;
-    boolean isParent;
-    boolean isTeacher;
+    private ProfileModel profileModel;
+    private UserRoleModel userRoleModel;
+    private static String role;
 
-    private String url = "http://192.168.0.119:8000/en/api/login/";
-
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
+//    private FirebaseAuth mAuth;
+//    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //Get Firebase auth Instance
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    onLoginSuccess();
-                } else {
-                    // User is signed out
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
-                }
-            }
-        };
-
-        //Save the cuurent data to session
-        session = new SessionManager(getApplicationContext());
+//        //Get Firebase auth Instance
+//        mAuth = FirebaseAuth.getInstance();
+//        mAuthListener = new FirebaseAuth.AuthStateListener() {
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                FirebaseUser user = firebaseAuth.getCurrentUser();
+//                if (user != null) {
+//                    // User is signed in
+//                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+//                    onLoginSuccess();
+//                } else {
+//                    // User is signed out
+//                    Log.d(TAG, "onAuthStateChanged:signed_out");
+//                }
+//            }
+//        };
+//
+//        //Save the current data to session
+//        session = new SessionManager(getApplicationContext());
 
         Intent intent = new Intent(this, SplashScreen.class);
         startActivity(intent);
@@ -88,40 +90,52 @@ public class LoginActivity extends ProgressDialogActivity {
             @Override
             public void onClick(View v) {
 
-                String username = emailText.getText().toString();
+                String email = emailText.getText().toString();
                 final String password = passwordText.getText().toString();
 
+                //pre-authentication of email and password
                 if (!validate()) {
                     onLoginFailed();
                     return;
                 }
 
-                showProgressDialog("Authenticating...");
+                showProgressDialog(getString(R.string.authentication));
 
                 Gson gson = new GsonBuilder()
                         .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
                         .create();
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.0.119:8000/en/")
+                        .baseUrl(getString(R.string.base_url))
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
-
                 LoginService service = retrofit.create(LoginService.class);
 
-                User user = new User(username, password);
+                User user = new User(email, password);
 
                 Call<ProfileModel> profileModelCall = service.login(user);
 
                 profileModelCall.enqueue(new Callback<ProfileModel>() {
+
                     @Override
                     public void onResponse(Call<ProfileModel> call, Response<ProfileModel> response) {
+
                         int statusCode = response.code();
-                        ProfileModel profileModel = response.body();
+
+                        //Store json data into Global Variable
+                        profileModel = response.body();
+                        GlobalVariables globalVariables = ((GlobalVariables)getApplicationContext());
+                        globalVariables.downloadAppData();
+                        globalVariables.setProfileModel(profileModel);
                         Log.d(TAG, "onResponse: " + statusCode);
+
                         if (response.isSuccessful()) {
+                            userRoleModel = profileModel.getUserRoleSet().get(0);
+                            role = userRoleModel.getRole().getName();
+                            //Determining user role
                             onLoginSuccess();
+                            Log.d(TAG, "role: " + role);
                         } else {
                             Log.e(TAG, "error body: ");
                         }
@@ -132,10 +146,9 @@ public class LoginActivity extends ProgressDialogActivity {
                     public void onFailure(Call<ProfileModel> call, Throwable t) {
                         Log.d(TAG, "onFailure: " + t.getMessage());
                         hideProgressDialog();
-                        Toast.makeText(LoginActivity.this, "wrong email or password", Toast.LENGTH_LONG).show();
+                        onLoginFailed();
                     }
                 });
-
 
 //                Log.e(TAG, "button clicked");
 //                mAuth.signInWithEmailAndPassword(email, password)
@@ -147,7 +160,7 @@ public class LoginActivity extends ProgressDialogActivity {
 //                                    Log.e(TAG, "login failed");
 //                                    Toast.makeText(LoginActivity.this, getString(R.string.login_failed), Toast.LENGTH_LONG).show();
 //                                } else {
-//                                    Log.e(TAG, "login succes");
+//                                    Log.e(TAG, "login success");
 //                                    new GetProfile().execute();
 //                                    onLoginSuccess();
 //                                }
@@ -169,15 +182,15 @@ public class LoginActivity extends ProgressDialogActivity {
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+//        mAuth.addAuthStateListener(mAuthListener);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
+//        if (mAuthListener != null) {
+//            mAuth.removeAuthStateListener(mAuthListener);
+//        }
     }
 
     @Override
@@ -274,22 +287,19 @@ public class LoginActivity extends ProgressDialogActivity {
 
     @Override
     public void onBackPressed() {
-        // disable going back to the MainActivity
+        // disable going back
         moveTaskToBack(true);
     }
 
     public void onLoginSuccess() {
-        if (isStudent) {
+
+        if (role.equals("Student")) {
             onLoginSuccessToStudent();
-        } else if (isParent) {
+        } else if (role.equals("Parent")) {
             onLoginSuccessToParent();
-        } else if (isTeacher) {
+        } else if (role.equals("Teacher")) {
             onLoginSuccessToTeacher();
         }
-        //for testing only
-        Intent intent = new Intent(this, UserAreaActivity.class);
-        startActivity(intent);
-        finish();
     }
 
     public void onLoginSuccessToStudent() {
@@ -311,29 +321,28 @@ public class LoginActivity extends ProgressDialogActivity {
     }
 
     public void onLoginFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-
+        Toast.makeText(getBaseContext(), R.string.login_failed, Toast.LENGTH_SHORT).show();
         loginButton.setEnabled(true);
     }
 
     public boolean validate() {
         boolean valid = true;
 
-        String username = emailText.getText().toString();
+        String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
 
-        if (username.isEmpty()) {
-            emailText.setError("email is required");
+        if (email.isEmpty()) {
+            emailText.setError(getString(R.string.email_required));
             valid = false;
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
-            emailText.setError("enter a valid email address");
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailText.setError(getString(R.string.enter_valid_email));
             valid = false;
         } else {
             emailText.setError(null);
         }
 
         if (password.isEmpty()) {
-            passwordText.setError("password is required");
+            passwordText.setError(getString(R.string.password_required));
             valid = false;
         } else {
             passwordText.setError(null);

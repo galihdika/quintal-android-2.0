@@ -52,12 +52,16 @@
 
     <!--String related to Login Activity-->
     <string name="loading">Authenthicating...</string>
-    <string name="login_failed">Wrong email or password</string>
+    <string name="login_failed">Login failed</string>
     <string name="tForgot_password">Forgot your password ?</string>
     <string name="tForgot_password_msg">Type your email below to reset your password</string>
     <string name="hint_email">email address</string>
     <string name="bReset_password">Reset password</string>
     <string name="bForgot_password">Forgot your password?</string>
-
+    <string name="email_required">Email is required?</string>
+    <string name="authentication">Authenticating...</string>
+    <string name="base_url">http://192.168.0.119:8000/en/</string>
+    <string name="enter_valid_email">enter a valid email address</string>
+    <string name="password_required">password is required</string>
 
 </resources>
