@@ -47,8 +47,7 @@ dependencies {
         exclude group: 'org.apache.httpcomponents'
     }
 
-    compile 'io.reactivex:rxandroid:1.2.0'
-    compile 'io.reactivex:rxjava:1.1.4'
+    compile 'com.android.support:recyclerview-v7:25.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

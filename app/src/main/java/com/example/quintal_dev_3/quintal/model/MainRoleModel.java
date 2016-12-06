@@ -2,13 +2,14 @@ package com.example.quintal_dev_3.quintal.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by quintal-dev-3 on 01/12/16.
  */
 
-public class MainRoleModel {
+public class MainRoleModel implements Serializable {
 
     @SerializedName("name")
     private String name;

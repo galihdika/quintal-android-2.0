@@ -1,6 +1,7 @@
 package com.example.quintal_dev_3.quintal.Utility;
 
 
+import com.example.quintal_dev_3.quintal.model.LoginModel;
 import com.example.quintal_dev_3.quintal.model.ProfileModel;
 import com.example.quintal_dev_3.quintal.model.User;
 
@@ -15,5 +16,5 @@ import retrofit2.http.POST;
 
 public interface LoginService {
     @POST("api/login/")
-    Call<ProfileModel> login(@Body User user);
+    Call<LoginModel> login(@Body User user);
 }

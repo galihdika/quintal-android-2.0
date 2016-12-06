@@ -1,19 +1,19 @@
-package com.example.quintal_dev_3.quintal;
 
+package com.example.quintal_dev_3.quintal;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
-
 import android.content.Intent;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-
 import com.example.quintal_dev_3.quintal.Utility.GlobalVariables;
+import com.example.quintal_dev_3.quintal.Utility.InitialDataService;
 import com.example.quintal_dev_3.quintal.Utility.LoginService;
+import com.example.quintal_dev_3.quintal.model.InitialDataModel;
+import com.example.quintal_dev_3.quintal.model.LoginModel;
 import com.example.quintal_dev_3.quintal.model.ProfileModel;
 import com.example.quintal_dev_3.quintal.model.RoleModel;
 import com.example.quintal_dev_3.quintal.model.User;
@@ -26,8 +26,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,21 +33,25 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends ProgressDialogActivity {
-
     private static final String TAG = LoginActivity.class.getName();
-
     SessionManager session;
-
     private EditText emailText;
     private EditText passwordText;
     private Button loginButton;
     private Button resetButton;
 
+    private LoginModel loginModel;
     private ProfileModel profileModel;
     private UserRoleModel userRoleModel;
     private static String role;
+    private static int profileID;
+    private InitialDataModel initialDataModel;
 
-//    private FirebaseAuth mAuth;
+    private static Gson gson;
+    private static Retrofit retrofit;
+
+    private GlobalVariables globalVariables;
+    //    private FirebaseAuth mAuth;
 //    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
@@ -86,10 +88,8 @@ public class LoginActivity extends ProgressDialogActivity {
         resetButton = (Button) findViewById(R.id.bReset_password_login);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-
                 String email = emailText.getText().toString();
                 final String password = passwordText.getText().toString();
 
@@ -101,54 +101,64 @@ public class LoginActivity extends ProgressDialogActivity {
 
                 showProgressDialog(getString(R.string.authentication));
 
-                Gson gson = new GsonBuilder()
+                gson = new GsonBuilder()
                         .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
                         .create();
 
-                Retrofit retrofit = new Retrofit.Builder()
+                retrofit = new Retrofit.Builder()
                         .baseUrl(getString(R.string.base_url))
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
 
+                //Call login data
                 LoginService service = retrofit.create(LoginService.class);
-
                 User user = new User(email, password);
-
-                Call<ProfileModel> profileModelCall = service.login(user);
-
-                profileModelCall.enqueue(new Callback<ProfileModel>() {
-
+                Call<LoginModel> profileModelCall = service.login(user);
+                profileModelCall.enqueue(new Callback<LoginModel>() {
                     @Override
-                    public void onResponse(Call<ProfileModel> call, Response<ProfileModel> response) {
-
+                    public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
+                        Log.w("json",new Gson().toJson(response));
                         int statusCode = response.code();
 
                         //Store json data into Global Variable
-                        profileModel = response.body();
-                        GlobalVariables globalVariables = ((GlobalVariables)getApplicationContext());
-                        globalVariables.downloadAppData();
-                        globalVariables.setProfileModel(profileModel);
-                        Log.d(TAG, "onResponse: " + statusCode);
+                        loginModel = response.body();
+
+                        //Log.d("response body: ", response.body());
+                        globalVariables = ((GlobalVariables)getApplicationContext());
+                        globalVariables.setLoginModel(loginModel);
+
+                        Log.d(TAG, "Login Service onResponse: " + statusCode);
 
                         if (response.isSuccessful()) {
-                            userRoleModel = profileModel.getUserRoleSet().get(0);
-                            role = userRoleModel.getRole().getName();
+                            Log.d(TAG, String.valueOf(loginModel.getProfile().getId()));
+                            userRoleModel = loginModel.getProfile().getUserRoleSet().get(0);
+
                             //Determining user role
+                            role = userRoleModel.getRole().getName();
+
+                            //Determining user id
+                            profileID = loginModel.getProfile().getId();
+
+                            getInitialData();
+
                             onLoginSuccess();
-                            Log.d(TAG, "role: " + role);
+
+                            Log.d(TAG, "id: " + loginModel.getProfile().getId());
+
                         } else {
-                            Log.e(TAG, "error body: ");
+                            Log.e(TAG, "Login Service error body: ");
                         }
                         hideProgressDialog();
                     }
 
                     @Override
-                    public void onFailure(Call<ProfileModel> call, Throwable t) {
-                        Log.d(TAG, "onFailure: " + t.getMessage());
+                    public void onFailure(Call<LoginModel> call, Throwable t) {
+                        Log.d(TAG, "Login Service onFailure: " + t.getMessage());
                         hideProgressDialog();
                         onLoginFailed();
                     }
                 });
+
 
 //                Log.e(TAG, "button clicked");
 //                mAuth.signInWithEmailAndPassword(email, password)
@@ -168,7 +178,6 @@ public class LoginActivity extends ProgressDialogActivity {
 //                        });
             }
         });
-
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -176,7 +185,38 @@ public class LoginActivity extends ProgressDialogActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    public void getInitialData() {
+        InitialDataService initialDataService = retrofit.create(InitialDataService.class);
+
+        Log.d(TAG, "profile ID: " + profileID);
+
+        Call<InitialDataModel> initialDataModelCall = initialDataService.initialData(profileID);
+        initialDataModelCall.enqueue(new Callback<InitialDataModel>() {
+            @Override
+            public void onResponse(Call<InitialDataModel> call, Response<InitialDataModel> response) {
+                int statusCode = response.code();
+                initialDataModel = response.body();
+
+                //Store initial data into Global Variables
+                globalVariables = ((GlobalVariables)getApplicationContext());
+                globalVariables.setInitialDataModel(initialDataModel);
+
+                Log.d(TAG, "init data: " + initialDataModel.getAssignmentClassSemesterSubjectSubmissions().get(0).getTitle());
+
+                if (response.isSuccessful()) {
+                    Log.d(TAG, "Initial Data Service onResponse: " + statusCode);
+                } else {
+                    Log.e(TAG, "Initial Data Service error body");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<InitialDataModel> call, Throwable t) {
+                Log.d(TAG, "Initial Data Service onFailure: " + t.getMessage());
+            }
+        });
     }
 
     @Override
@@ -199,7 +239,7 @@ public class LoginActivity extends ProgressDialogActivity {
         hideProgressDialog();
     }
 
-//    private class GetProfile extends AsyncTask<Void, Void, Void> {
+    //    private class GetProfile extends AsyncTask<Void, Void, Void> {
 //
 //        @Override
 //        protected void onPreExecute() {
@@ -292,7 +332,6 @@ public class LoginActivity extends ProgressDialogActivity {
     }
 
     public void onLoginSuccess() {
-
         if (role.equals("Student")) {
             onLoginSuccessToStudent();
         } else if (role.equals("Parent")) {
@@ -315,9 +354,7 @@ public class LoginActivity extends ProgressDialogActivity {
         startActivity(intent);
         finish();
     }
-
     public void onLoginSuccessToTeacher() {
-
     }
 
     public void onLoginFailed() {
@@ -327,10 +364,8 @@ public class LoginActivity extends ProgressDialogActivity {
 
     public boolean validate() {
         boolean valid = true;
-
         String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
-
         if (email.isEmpty()) {
             emailText.setError(getString(R.string.email_required));
             valid = false;
@@ -340,14 +375,12 @@ public class LoginActivity extends ProgressDialogActivity {
         } else {
             emailText.setError(null);
         }
-
         if (password.isEmpty()) {
             passwordText.setError(getString(R.string.password_required));
             valid = false;
         } else {
             passwordText.setError(null);
         }
-
         return valid;
     }
 
@@ -356,6 +389,4 @@ public class LoginActivity extends ProgressDialogActivity {
         super.onDestroy();
         //loginDataBaseAdapter.close();
     }
-
 }
-
